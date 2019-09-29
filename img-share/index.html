@@ -9,7 +9,7 @@
 
     <script src='fabric.js'></script>
 
-    <title>Document</title>
+    <title>Image Share</title>
 </head>
 
 <body>
@@ -17,22 +17,26 @@
 
     <button onclick='download_img()'>Share</button>
 
+    <p><img id='bottle' crossorigin="anonymous" src='https://thewhiskeywash.com/wp-content/uploads/2016/03/springbank-25-year-old-bottled-2015-whisky-e1458745308508.jpg'>
+    <img id='rating' crossorigin="anonymous" src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/google/223/grinning-face_1f600.png.jpg'>
+
+
     <script>
         var canvas = new fabric.Canvas('c');
 
+
         function addImage(url) {
             fabric.Image.fromURL(url, function (img) {
+                img.crossOrigin = 'Anonymous';
                 canvas.add(img);
-
             });
         }
 
-        addImage(
-            'https://thewhiskeywash.com/wp-content/uploads/2016/03/springbank-25-year-old-bottled-2015-whisky-e1458745308508.jpg'
-        );
-        addImage(
-            'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/google/223/grinning-face_1f600.png'
-        );
+
+
+        addImage(document.getElementById('bottle'));
+
+        addImage(document.getElementById('rating'));
 
         function download_img(){
             canvas.toDataURL({format:'jpeg',})
