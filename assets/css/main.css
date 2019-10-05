@@ -1296,6 +1296,14 @@ input, select, textarea {
 			line-height: 5.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
+			display:flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#header .logo img {
+			width: 40px;
+			height: auto;
 		}
 
 			#header .logo .icon:before {
